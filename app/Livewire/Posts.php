@@ -5,12 +5,14 @@ namespace App\Livewire;
 use App\Models\Post;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
 
 class Posts extends Component
 {
     use WithFileUploads;
+    use WithPagination;
     public $title;
     public $body;
     public $image;
@@ -96,7 +98,7 @@ public function updatePost()
     public function render()
     {
         return view('livewire.posts', [
-            'posts' => Post::all()
+            'posts' => Post::orderBy('updated_at', 'DESC')->paginate(5)
         ]);
     }
 }
