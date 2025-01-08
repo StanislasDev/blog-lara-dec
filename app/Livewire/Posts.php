@@ -53,7 +53,7 @@ class Posts extends Component
     // $this->showModalForm = false;
 
     // Ajouter un message de succès
-    // session()->flash('message', 'Post créé avec succès !');
+    session()->flash('flash.banner', 'Post Created Successfully');
 }
 public function showEditPostModal($id)
 {
@@ -93,6 +93,15 @@ public function updatePost()
         'image' => $this->newImage
     ]);
     $this->reset();
+    session()->flash('flash.banner', 'Post Updated Successfully');
+}
+
+public function deletePost($id)
+{
+    $post = Post::find($id);
+    Storage::delete('photos', $post->image, 'public');
+    $post->delete();
+    session()->flash('flash.banner', 'Post Deleted Successfully');
 }
 
     public function render()

@@ -1,4 +1,5 @@
 <div class="container mx-auto mt-2">
+  <x-banner />
     <div class="flex content-center m-2 p-2">
         <x-button wire:click="showCreatePostModal">Create post</x-jet-button>
     </div>
@@ -33,7 +34,7 @@
             </td>
             <td class="px-6 py-4 text-right text-sm">
               <x-button wire:click="showEditPostModal({{ $post->id }})">Edit</x-button>
-              <x-button>Delete</x-button>
+              <x-button wire:click="deletePost({{ $post->id }})">Delete</x-button>
             </td>
           </tr>
           @endforeach
