@@ -1,5 +1,4 @@
 <div class="container mx-auto mt-2">
-  <x-banner />
     <div class="flex content-center m-2 p-2">
         <x-button wire:click="showCreatePostModal">Create post</x-jet-button>
     </div>

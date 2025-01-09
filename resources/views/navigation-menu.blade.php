@@ -15,6 +15,11 @@
                     <x-nav-link class="dark:text-gray-200 font-bold" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @role('admin')
+                    <x-nav-link class="dark:text-gray-200 font-bold" href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
+                        {{ __('Posts') }}
+                    </x-nav-link>
+                    @endrole
                 </div>
             </div>
 
