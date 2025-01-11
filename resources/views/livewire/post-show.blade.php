@@ -5,7 +5,7 @@
       <h1 class="font-bold break-normal text-3xl md:text-5xl text-blue-300">{{ $post->title }}</h1>
     </div>
     <!--image-->
-    <img class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" src="https://picsum.photos/200/300" />
+    <img class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" src="{{ asset('storage/photos/'. $post->image) }}" />
     <!--Container-->
     <div class="container max-w-5xl mx-auto mt-8">
       <div class="mx-0 sm:mx-6">

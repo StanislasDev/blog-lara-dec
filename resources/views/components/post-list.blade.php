@@ -5,7 +5,7 @@
           <a href="{{ route('posts.show', $post->slug) }}" class="group max-w-sm mx-auto overflow-hidden bg-white rounded-lg hover:shadow-lg dark:bg-gray-800 hover:bg-gray-200 transition duration-500 ease-in-out">
             <img
             class="object-cover object-center w-full h-44 opacity-90 rounded-lg group-hover:opacity-100 transition duration-500 ease-in-out"
-             src="{{ asset('storage/photos'. $post->image) }}" alt="avatar">
+             src="{{ asset('storage/photos/'. $post->image) }}" alt="avatar">
 
              <div class="mt-2">
             <div class="flex items-center px-6 py-3 bg-gray-900 rounded-lg rounded-b-none">
